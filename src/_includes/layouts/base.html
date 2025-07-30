@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  {% include "basehead.html" %}
+</head>
+<body>
+  <header class="sticky-top">
+    {% include "baseheader.html" %}
+  </header>
+  <main class="px-4">
+    {{content | safe}}
+  </main>
+</body>
+</html>
