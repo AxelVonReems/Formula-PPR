@@ -1,41 +1,35 @@
-<div class="logo-line container-fluid">
-  <a class="navbar-brand" href="../">
-    <img class="brand-logo" src="../assets/images/logo.png" alt="Logo">
-    <span class="brand-name">Формула ППР</span>
-  </a>
-  <div class="d-none d-lg-block text-center flex-grow-1">
-    <p class="slogan mb-0">
+<div class="logo-bar">
+  <div class="brand">
+    <a href="../">
+      <img class="brand-logo" src="../assets/images/logo.png" alt="Main logo">
+      <span class="brand-name">Формула ППР</span>
+    </a>
+    <p class="brand-slogan">
       Разработка проектов производства<br>работ (ППР), ТК и ППРк для строительства
     </p>
   </div>
-  <div class="phone d-none d-md-block">
-    <i class="bi bi-telephone"></i>
+  <div class="phone">
+    <img class="phone-icon" src="../assets/images/icon-phone.svg" alt="Phone icon">
     <a href="tel:+79218572255">+7 (921) 857-22-55</a>
   </div>
 </div>
-
-<nav class="navbar navbar-expand-sm navigation">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse navbar-scroll" id="mynavbar">
-      <div class="nav-scroll w-100">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link {% if page.url == '/what-is-ppr-and-tk/' %}active{% endif %}" href="/what-is-ppr-and-tk/">Что такое ППР и ТК</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% if page.url == '/algorythm/' %}active{% endif %}" href="/algorythm/">Алгоритм составления ППР</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% if page.url == '/why-formula-ppr/' %}active{% endif %}" href="/why-formula-ppr/">Почему мы</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% if page.url == '/contacts/' %}active{% endif %}" href="/contacts/">Контакты</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<nav aria-label="Main navigation">
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <img class="hamburger-icon" src="../assets/images/icon-burger.svg" alt="Open menu">
+    <img class="cross-icon" src="../assets/images/icon-cross.svg" alt="Close menu">
+  </button>
+  <ul class="nav-list" role="list">
+    <li class="nav-item {% if page.url == '/what-is-ppr-and-tk/' %}active{% endif %}">
+      <a href="/what-is-ppr-and-tk/">Что такое ППР и ТК</a>
+    </li>
+    <li class="nav-item {% if page.url == '/algorythm/' %}active{% endif %}">
+      <a href="/algorythm/">Алгоритм составления ППР</a>
+    </li>
+    <li class="nav-item {% if page.url == '/why-formula-ppr/' %}active{% endif %}">
+      <a href="/why-formula-ppr/">Почему мы</a>
+    </li>
+    <li class="nav-item {% if page.url == '/contacts/' %}active{% endif %}">
+      <a href="/contacts/">Контакты</a>
+    </li>
+  </ul>
 </nav>

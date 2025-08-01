@@ -19,97 +19,216 @@ body {
   color: var(--black) !important;
 }
 
-.logo-line {
-  background-color: var(--blue);
-  color: var(--white);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem 0.25rem;
+/* DELETE THIS LATER */
+main {
+  background-color: var(--white);
 }
 
-.logo-line .navbar-brand {
+header {
+  background-color: var(--blue);
+  color: var(--white);
+  height: 8rem;
+  width: 100vw;
+  position: sticky;
+}
+
+header a {
+  text-decoration: none;
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: var(--white);
+  padding: 0 1rem;
+  color: inherit;
+}
+
+/* Settings for logo and phone */
+.logo-bar {
+  padding: 0 1rem;
+  height: 65%;
+  width: 100vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
 }
 
 .brand-logo {
   height: 3rem;
-  margin-right: 0.5rem;
+  padding-right: 1rem;
 }
 
 .brand-name {
-  margin: 0 1rem;
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 1.6rem;
 }
 
-.slogan {
-  font-size: 1rem;
-  line-height: 1.4;
-  color: var(--white);
-  text-align: left;
+.brand-slogan {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 .phone {
-  font-size: 1rem;
-  color: var(--white);
+  font-size: 1.1rem;
+  display: flex;
+  text-align: right;
+  padding-left: 1rem;
 }
 
 .phone a {
-  color: var(--white);
-  text-decoration: none;
+  padding: 0 0.5rem !important;
 }
 
-.phone a:hover {
-  text-decoration: underline;
+.phone-icon {
+  height: 1.6rem;
 }
 
-.navigation {
-  background-color: var(--blue);
+/* Settings for nav menu */
+nav {
+  height: 35%;
+  width: 100vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
-.navbar-nav .nav-link {
-  color: var(--white);
-  /* padding: 0.5rem 1rem; */
-  /* margin: 0 0.25rem; */
-  border-radius: 0;
-  background-color: transparent;
-  border: 1px solid transparent;
+.hamburger {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
   transition: all 0.2s ease-in-out;
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
+.nav-item:hover, .nav-item.active {
   background-color: var(--yellow);
   color: var(--black);
-  border-color: var(--yellow);
 }
 
-.navbar {
-  padding-bottom: 0 !important;
+/* Remove hover for touch devices */
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-item:hover, 
+  .nav-item.active {
+    background-color: var(--yellow);
+    color: var(--black);
+  }
 }
 
-.nav-scroll {
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-}
-
-.navbar-nav > .nav-item {
-  flex: 0 0 auto;
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .navbar-scroll {
-    overflow-x: hidden;
-    white-space: nowrap;
-    scrollbar-width: none;
+/* Tablet settings */
+@media (min-width: 577px) and (max-width: 855px) {
+  header {
+    height: 6.5rem;
   }
 
-  .navbar-scroll .nav-link {
-    display: inline-block;
+  .logo-bar {
+    padding: 0 2rem;
+  }
+
+  .brand-slogan {
+    display: none;
+  }
+
+  nav {
+    overflow-x: scroll;
+    white-space: nowrap;
+    scrollbar-width: none;
+    justify-content: center;
+  }
+}
+
+/* Mobile settings */
+@media (max-width: 576px) {
+  header {
+    height: 4rem !important;
+    display: flex;
+  }
+
+  .logo-bar {
+    height: 100%;
+    justify-content: center;
+  }
+
+  .brand-logo {
+    height: 2.5rem;
+  }
+
+  .brand-name {
+    font-size: 1.4rem;
+  }
+
+  .brand-slogan, .phone {
+    display: none;
+  }
+
+  nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 20%;
+    z-index: 1;
+    
+  }
+
+  .nav-list {
+    max-height: 10rem;
+    flex-direction: column;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100vw;
+    background-color: var(--blue);
+    z-index: 0;
+  }
+
+  main {
+    position: relative;
+    z-index: 2;
+    transition: margin-top 0.4s ease-in-out;
+}
+
+  .nav-item {
+    padding: 0.5rem 0;
+  }
+
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .hamburger img {
+    height: 3rem;
+  }
+
+  .hamburger .cross-icon {
+    display: none;
+  }
+
+  .hamburger.active .hamburger-icon {
+    display: none;
+  }
+
+  .hamburger.active .cross-icon {
+    display: inline;
   }
 }
