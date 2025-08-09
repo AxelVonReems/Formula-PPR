@@ -4,9 +4,7 @@
   {% include "basehead.html" %}
 </head>
 <body>
-
-
-
+  <!-- READY -->
   <header>
     {% include "baseheader.html" %}
   </header>
@@ -18,31 +16,24 @@
   </main>
 
 
-
+  <!-- WORK IN PROGRESS -->
   <footer>
     <!-- CODE HERE -->
   </footer>
 
 
-
-
+  <!-- WORK IN PROGRESS -->
+  <!-- MOVE TO SEPARATE FILE WHEN FINISHED -->
   <script>
     const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-    const main = document.querySelector('main');
     const navList = document.querySelector('.nav-list');
 
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
+      navList.classList.toggle('active');
+
       const expanded = hamburger.getAttribute('aria-expanded') === 'true';
       hamburger.setAttribute('aria-expanded', !expanded);
-
-      if (!expanded) {
-        const menuHeight = navList.offsetHeight;
-        main.style.marginTop = `${menuHeight}px`;
-      } else {
-        main.style.marginTop = '0';
-      }
     });
   </script>
 </body>

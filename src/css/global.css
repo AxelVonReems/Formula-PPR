@@ -29,8 +29,7 @@ header {
   color: var(--white);
   height: 8rem;
   width: 100%;
-  position: sticky !important;
-  top: 0 !important;
+  
 }
 
 header a {
@@ -43,7 +42,6 @@ header a {
 
 /* Settings for logo and phone */
 .logo-bar {
-  /* padding: 0 0.5rem; */
   height: 65%;
   width: 100vw;
   max-width: 1400px;
@@ -132,11 +130,13 @@ nav {
 /* Tablet settings */
 @media (min-width: 577px) and (max-width: 855px) {
   header {
+    position: sticky !important;
+    top: 0 !important;
     height: 6.5rem;
   }
 
   .logo-bar {
-    padding: 0 2rem;
+    padding: 0;
   }
 
   .brand-slogan {
@@ -155,12 +155,16 @@ nav {
   header {
     height: 4rem !important;
     display: flex;
-    position: static !important;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
 
   .logo-bar {
     height: 100%;
     justify-content: center;
+
+    flex: 1;
   }
 
   .brand-logo {
@@ -182,25 +186,27 @@ nav {
     justify-content: center;
     height: 100%;
     width: 20%;
-    z-index: 1;
   }
 
   .nav-list {
-    max-height: 10rem;
+    top: 4rem;
+    width: 100vw;
+    background-color: #003366ca;
+    backdrop-filter: blur(4px);
+    z-index: 0;
     flex-direction: column;
     position: fixed;
-    top: 4rem;
-    left: 0;
-    width: 100vw;
-    background-color: var(--blue);
-    z-index: 0;
+    right: -100%;
+    height: 100vh;
+    transition: right 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+    z-index: 999;
   }
 
-  main {
-    position: relative;
-    z-index: 2;
-    transition: margin-top 0.4s ease-in-out;
-}
+  .nav-list.active {
+    right: 0;
+    opacity: 1;
+  }
 
   .nav-item {
     padding: 0.5rem 0;
@@ -218,6 +224,11 @@ nav {
 
   .hamburger img {
     height: 3rem;
+    /* Disabling all interactions with icons on mobiles */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
   }
 
   .hamburger .cross-icon {
