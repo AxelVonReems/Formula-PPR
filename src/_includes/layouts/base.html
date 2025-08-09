@@ -18,13 +18,15 @@
 
   <!-- WORK IN PROGRESS -->
   <footer>
-    <!-- CODE HERE -->
+    {% include "basefooter.html" %}
   </footer>
 
 
   <!-- WORK IN PROGRESS -->
   <!-- MOVE TO SEPARATE FILE WHEN FINISHED -->
   <script>
+    // HEADER CODE
+    // Menu folding/unfolding
     const hamburger = document.querySelector('.hamburger');
     const navList = document.querySelector('.nav-list');
 
@@ -35,6 +37,15 @@
       const expanded = hamburger.getAttribute('aria-expanded') === 'true';
       hamburger.setAttribute('aria-expanded', !expanded);
     });
+
+
+
+
+    // FOOTER CODE
+    // Automatic year actualization
+    const yearSpan = document.getElementById('year');
+    const currentYear = new Date().getFullYear();
+    yearSpan.textContent = currentYear;
   </script>
 </body>
 </html>
