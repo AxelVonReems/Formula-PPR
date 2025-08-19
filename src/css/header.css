@@ -17,7 +17,7 @@ header a {
 .logo-bar {
   height: 65%;
   width: 100vw;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -42,30 +42,34 @@ header a {
   font-size: 0.9rem;
 }
 
-.phone {
-  font-size: 1.1rem;
+.contacts {
+  font-size: 1rem;
   display: flex;
   text-align: right;
   padding: 0 1rem;
   gap: 0.5rem;
 }
 
-.phone a {
+.contacts a {
   padding: 0 !important;
 }
 
-.phone-icon {
-  height: 1.6rem;
+.contacts-icon {
+  height: 1.4rem;
 }
 
 /* Settings for nav menu */
 nav {
   height: 35%;
   width: 100vw;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
+}
+
+.mobile-contacts {
+  display: none;
 }
 
 .hamburger {
@@ -85,26 +89,26 @@ nav {
   transition: all 0.3s ease-in-out;
 }
 
-.nav-item:hover, .nav-item.active {
+.nav-item.active {
   background-color: var(--yellow);
   color: var(--black);
 }
 
-/* Remove hover for touch devices */
+/* Remove hover interactions for touch devices */
 @media (hover: hover) and (pointer: fine) {
-  .nav-item:hover, 
-  .nav-item.active {
+  .nav-item:hover {
     background-color: var(--yellow);
     color: var(--black);
   }
 }
 
 /* Tablet settings */
-@media (min-width: 577px) and (max-width: 855px) {
+@media (min-width: 577px) and (max-width: 865px) {
   header {
     position: sticky !important;
     top: 0 !important;
     height: 6.5rem;
+    z-index: 10;
   }
 
   .logo-bar {
@@ -129,7 +133,7 @@ nav {
     display: flex;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 10;
   }
 
   .logo-bar {
@@ -146,7 +150,7 @@ nav {
     font-size: 1.4rem;
   }
 
-  .brand-slogan, .phone {
+  .brand-slogan, .contacts {
     display: none;
   }
 
@@ -169,18 +173,35 @@ nav {
     position: fixed;
     right: -100%;
     height: 100vh;
-    transition: right 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
     opacity: 0;
-    z-index: 999;
+    z-index: 9;
   }
 
   .nav-list.active {
     right: 0;
     opacity: 1;
+    touch-action: none;
   }
 
   .nav-item {
     padding: 0.5rem 0;
+  }
+
+  .nav-item a {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobile-contacts {
+    display: block;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+
+  .mobile-contacts a {
+    padding: 0 0.5rem !important;
   }
 
   .hamburger {

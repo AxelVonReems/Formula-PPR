@@ -20,10 +20,16 @@ body {
   font-family: Montserrat !important;
   background-color: var(--white) !important;
   color: var(--black) !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-/* DELETE THIS LATER */
-main {
-  background-color: var(--white);
+main strong {
+  font-weight: normal;
+  color: inherit;
 }
 
+.highlight {
+  font-weight: 600;
+}

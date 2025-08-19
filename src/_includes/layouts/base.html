@@ -11,12 +11,15 @@
 
 
 
-  <main class="px-4">
+  <main>
     {{content | safe}}
   </main>
 
 
-  <!-- WORK IN PROGRESS -->
+
+
+
+  <!-- READY -->
   <footer>
     {% include "basefooter.html" %}
   </footer>
@@ -30,13 +33,15 @@
     const hamburger = document.querySelector('.hamburger');
     const navList = document.querySelector('.nav-list');
 
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navList.classList.toggle('active');
+    if (hamburger && navList) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navList.classList.toggle('active');
 
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', !expanded);
-    });
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !expanded);
+      });
+    }
 
 
 
@@ -44,8 +49,31 @@
     // FOOTER CODE
     // Automatic year actualization
     const yearSpan = document.getElementById('year');
-    const currentYear = new Date().getFullYear();
-    yearSpan.textContent = currentYear;
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
   </script>
+
+  {% if page.url == '/why-formula-ppr/' %}
+    <script>
+      // Nopriz modal image
+      var modal = document.getElementById("noprizModal");
+
+      var img = document.getElementById("noprizCert");
+      var modalImg = document.getElementById("cert01");
+      var captionText = document.getElementById("noprizCaption");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = "Аттестация НОПРИЗ";
+      }
+
+      var span = document.getElementsByClassName("close")[0];
+
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+    </script>
+  {% endif %}
 </body>
 </html>
