@@ -2,6 +2,7 @@
 @import url('header.css');
 @import url('footer.css');
 @import url('main.css');
+@import url('contact-us.css');
 
 @font-face {
   font-family: Montserrat;
@@ -14,6 +15,7 @@
   --blue: #003366;
   --yellow: #ffbe0b;
   --grey: #718f94;
+  --light-grey: #e2ebf5;
 }
 
 body {
@@ -23,6 +25,11 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main strong {

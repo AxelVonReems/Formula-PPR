@@ -15,7 +15,11 @@
     {{content | safe}}
   </main>
 
-
+  {% if page.url != "/contacts/" %}
+    <contact-us>
+      {% include "contact-us.html" %}
+    </contact-us>
+  {% endif %}
 
 
 
@@ -28,6 +32,7 @@
   <!-- WORK IN PROGRESS -->
   <!-- MOVE TO SEPARATE FILE WHEN FINISHED -->
   <script>
+
     // HEADER CODE
     // Menu folding/unfolding
     const hamburger = document.querySelector('.hamburger');
@@ -42,9 +47,7 @@
         hamburger.setAttribute('aria-expanded', !expanded);
       });
     }
-
-
-
+    // HEADER CODE END
 
     // FOOTER CODE
     // Automatic year actualization
@@ -52,8 +55,48 @@
     if (yearSpan) {
       yearSpan.textContent = new Date().getFullYear();
     }
+    // FOOTER CODE END
+
   </script>
 
+
+
+  <!-- INDEX PAGE CODE -->
+  {% if page.url == '/' %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const accordions = document.querySelectorAll(".accordion");
+
+        accordions.forEach(acc => {
+          acc.addEventListener("click", function () {
+            this.classList.toggle("active");
+
+            let panel = this.nextElementSibling;
+            if (this.classList.contains("active")) {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } else {
+              panel.style.maxHeight = null;
+            }
+          });
+        });
+      });
+
+
+      document.getElementById('cta-scroll-button').addEventListener('click', function() {
+        const target = document.getElementById('contact-us');
+
+        // Плавный скролл к элементу
+        target.scrollIntoView({ behavior: 'smooth' });
+
+        // Убираем хэш из адресной строки без перезагрузки
+        history.pushState(null, '', window.location.pathname);
+      });
+    </script>
+  {% endif %}
+  <!-- INDEX PAGE CODE END -->
+
+
+  <!-- ABOUT US CODE -->
   {% if page.url == '/why-formula-ppr/' %}
     <script>
       // Nopriz modal image
@@ -75,5 +118,7 @@
       }
     </script>
   {% endif %}
+  <!-- ABOUT US CODE END -->
+
 </body>
 </html>
