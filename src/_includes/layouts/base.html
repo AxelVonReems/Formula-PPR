@@ -4,12 +4,9 @@
   {% include "basehead.html" %}
 </head>
 <body>
-  <!-- READY -->
   <header>
     {% include "baseheader.html" %}
   </header>
-
-
 
   <main>
     {{content | safe}}
@@ -21,104 +18,8 @@
     </contact-us>
   {% endif %}
 
-
-
-  <!-- READY -->
   <footer>
     {% include "basefooter.html" %}
   </footer>
-
-
-  <!-- WORK IN PROGRESS -->
-  <!-- MOVE TO SEPARATE FILE WHEN FINISHED -->
-  <script>
-
-    // HEADER CODE
-    // Menu folding/unfolding
-    const hamburger = document.querySelector('.hamburger');
-    const navList = document.querySelector('.nav-list');
-
-    if (hamburger && navList) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navList.classList.toggle('active');
-
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', !expanded);
-      });
-    }
-    // HEADER CODE END
-
-    // FOOTER CODE
-    // Automatic year actualization
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
-    }
-    // FOOTER CODE END
-
-  </script>
-
-
-
-  <!-- INDEX PAGE CODE -->
-  {% if page.url == '/' %}
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const accordions = document.querySelectorAll(".accordion");
-
-        accordions.forEach(acc => {
-          acc.addEventListener("click", function () {
-            this.classList.toggle("active");
-
-            let panel = this.nextElementSibling;
-            if (this.classList.contains("active")) {
-              panel.style.maxHeight = panel.scrollHeight + "px";
-            } else {
-              panel.style.maxHeight = null;
-            }
-          });
-        });
-      });
-
-
-      document.getElementById('cta-scroll-button').addEventListener('click', function() {
-        const target = document.getElementById('contact-us');
-
-        // Плавный скролл к элементу
-        target.scrollIntoView({ behavior: 'smooth' });
-
-        // Убираем хэш из адресной строки без перезагрузки
-        history.pushState(null, '', window.location.pathname);
-      });
-    </script>
-  {% endif %}
-  <!-- INDEX PAGE CODE END -->
-
-
-  <!-- ABOUT US CODE -->
-  {% if page.url == '/why-formula-ppr/' %}
-    <script>
-      // Nopriz modal image
-      var modal = document.getElementById("noprizModal");
-
-      var img = document.getElementById("noprizCert");
-      var modalImg = document.getElementById("cert01");
-      var captionText = document.getElementById("noprizCaption");
-      img.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = "Аттестация НОПРИЗ";
-      }
-
-      var span = document.getElementsByClassName("close")[0];
-
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-    </script>
-  {% endif %}
-  <!-- ABOUT US CODE END -->
-
 </body>
 </html>

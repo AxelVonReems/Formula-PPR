@@ -2,11 +2,11 @@
   --page-pad: clamp(16px, 4vw, 48px);
 }
 
+/* GENERAL SETTINGS START */
 main {
   max-width: 1200px;
   padding-inline: var(--page-pad);
   margin: 1rem auto 3rem;
-
   width: 100%;
   flex: 1;
 }
@@ -26,7 +26,9 @@ h3 {
   font-weight: 600;
 }
 
-/* INDEX SETTINGS */
+/* GENERAL SETTINGS END */
+
+/* INDEX SETTINGS START */
 
 /* Hero block */
 .hero-image {
@@ -69,7 +71,6 @@ h3 {
   background-color: var(--white);
   font-weight: 600;
   transition: background-color 0.2s ease-in-out;
-  
 }
 
 .hero-text button:hover {
@@ -89,7 +90,6 @@ h3 {
 .services-results h3 {
   font-size: 1.5rem !important;
 }
-
 
 /* Card block */
 .info-cards {
@@ -188,12 +188,7 @@ h3 {
   font-weight: bold;
 }
 
-
-
-
-
 /* How we work block */
-
 .steps-infographic figcaption {
   position: absolute;
   width: 1px;
@@ -280,13 +275,7 @@ h3 {
   font-size: 1rem;
 }
 
-
-
-
-
-
 /* Costs and times block */
-
 .pricing-factors {
   max-width: 1000px;
   margin: 2rem auto;
@@ -320,7 +309,7 @@ h3 {
   margin: 0 0 0.5rem 0;
   flex-shrink: 0;
   color: var(--blue);
-  width: 220px; /* фиксированная ширина для визуального разделения */
+  width: 220px;
 }
 
 .factor-block ul {
@@ -335,9 +324,7 @@ h3 {
   line-height: 1.4;
 }
 
-
 /* FAQ accordion settings */
-
 .faq-accordion {
   max-width: 1000px;
   margin: 0 auto;
@@ -363,7 +350,7 @@ h3 {
   background-color: #c8daef;
 }
 
-/* Fix for color not changing un touch devices */
+/* Fix for accordion item color not changing un touch devices */
 @media (hover: hover) and (pointer: fine) {
   .accordion:hover {
     background-color: #c8daef;
@@ -393,7 +380,6 @@ h3 {
   margin: 1rem 0;
 }
 
-
 .more-details {
   text-align: left;
   font-size: 1.1rem;
@@ -404,217 +390,9 @@ h3 {
   font-weight: 600;
 }
 
-
-
 /* INDEX SETTINGS END */
 
-
-
-
-/* CONTACTS SETTINGS */
-dl {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.5rem 1rem;
-  margin: 0;
-  padding: 0;
-}
-
-dl dt {
-  font-weight: bold;
-  position: relative;
-}
-
-dl dt::after {
-  content: ": ";
-  margin-left: 0.25rem;
-}
-
-dl dd {
-  margin: 0;
-  overflow-wrap: break-word;
-}
-
-dt, dd {
-  display: inline;
-  margin: 0;
-}
-
-.download-bank-details {
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: var(--white);
-  transition: all 0.2s ease-in-out;
-  font-weight: 400;
-  padding: 0.65rem 0.9rem;
-  background-color: var(--blue);
-  border-radius: 0.5rem;
-}
-
-.download-bank-details:hover {
-  color: var(--yellow);
-}
-
-/* Map settings */
-.map-container {
-  position: relative;
-  width: 100%;
-  height: 20rem !important;
-  overflow: hidden;
-  border-radius: 1rem;
-  margin: 1.5rem 0 1rem 0;
-}
-
-.map-container iframe {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* WHY FORMULA PPR SETTINGS */
-
-/* NOPRIZ modal image settings */
-#noprizCert {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-  margin: 0 auto;
-}
-
-#noprizCert:hover {opacity: 0.7;}
-
-.noprizModal {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: var(--blue);
-  background-color: #003366ca;
-}
-
-.nopriz-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-#noprizCaption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: var(--white);
-  padding: 10px 0;
-  height: 150px;
-}
-
-.nopriz-content, #noprizCaption {
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* ALGORITHM SETTINGS */
-
-/* Algorithm infographics settings */
-.algorithm-infographic {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.algorithm-infographic h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.algorithm-steps {
-  counter-reset: step;
-  list-style: none;
-  padding: 0;
-}
-
-.algorithm-steps p {
-  margin: 0.5rem 0 !important;
-}
-
-.algorithm-steps li {
-  counter-increment: step;
-  background: var(--blue);
-  color: var(--white);
-  margin: 0;
-  padding: 10px 15px 10px 45px;
-  border-left: 6px solid var(--yellow);
-  border-radius: 6px;
-  position: relative;
-}
-
-.algorithm-steps li::before {
-  content: counter(step);
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: var(--yellow);
-  color: var(--blue);
-  width: 30px;
-  height: 100%;
-  text-align: center;
-  line-height: 3rem;
-  font-weight: bold;
-}
-
-.algorithm-steps li p {
-  font-size: 0.9rem;
-}
-
-.algorithm-arrow {
-  padding: 0;
-  margin: 0 auto;
-  height: 3rem;
-}
-
-/* Hides figcaption for users but not for search engines */
-.algorithm-infographic-caption {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* WHAT IS PPR PAGE SETTINGS */
+/* WHAT IS PPR SETTINGS START */
 
 /* PPR goals infographics settings */
 .ppr-goals {
@@ -701,20 +479,224 @@ dt, dd {
   right: 0;
 }
 
-
-
 .ppr-structure-image {
   width: 50%;
   margin: 1rem auto;
 }
 
+/* WHAT IS PPR SETTINGS END */
 
+/* ALGORITHM SETTINGS START */
 
+/* Algorithm infographics settings */
+.algorithm-infographic {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
+.algorithm-infographic h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
+.algorithm-steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+}
 
+.algorithm-steps p {
+  margin: 0.5rem 0 !important;
+}
 
-/* Tablet settings */
+.algorithm-steps li {
+  counter-increment: step;
+  background: var(--blue);
+  color: var(--white);
+  margin: 0;
+  padding: 10px 15px 10px 45px;
+  border-left: 6px solid var(--yellow);
+  border-radius: 6px;
+  position: relative;
+}
+
+.algorithm-steps li::before {
+  content: counter(step);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--yellow);
+  color: var(--blue);
+  width: 30px;
+  height: 100%;
+  text-align: center;
+  line-height: 3rem;
+  font-weight: bold;
+}
+
+.algorithm-steps li p {
+  font-size: 0.9rem;
+}
+
+.algorithm-arrow {
+  padding: 0;
+  margin: 0 auto;
+  height: 3rem;
+}
+
+/* Hides figcaption for users but not for search engines */
+.algorithm-infographic-caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ALGORITHM SETTINGS START */
+
+/* WHY FORMULA PPR SETTINGS START */
+
+/* NOPRIZ modal image settings */
+#noprizCert {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0 auto;
+}
+
+#noprizCert:hover {opacity: 0.7;}
+
+.noprizModal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--blue);
+  background-color: #003366ca;
+}
+
+.nopriz-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#noprizCaption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: var(--white);
+  padding: 10px 0;
+  height: 150px;
+}
+
+.nopriz-content, #noprizCaption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* WHY FORMULA PPR SETTINGS END */
+
+/* CONTACTS SETTINGS START */
+
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+dl dt {
+  font-weight: bold;
+  position: relative;
+}
+
+dl dt::after {
+  content: ": ";
+  margin-left: 0.25rem;
+}
+
+dl dd {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+dt, dd {
+  display: inline;
+  margin: 0;
+}
+
+.download-bank-details {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--white);
+  transition: all 0.2s ease-in-out;
+  font-weight: 400;
+  padding: 0.65rem 0.9rem;
+  background-color: var(--blue);
+  border-radius: 0.5rem;
+}
+
+.download-bank-details:hover {
+  color: var(--yellow);
+}
+
+/* Map settings */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 20rem !important;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.map-container iframe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* CONTACTS SETTINGS END */
+
+/* TABLET SETTINGS START */
 @media (min-width: 577px) and (max-width: 865px) {
   .hero-image {
     background-image: linear-gradient(#00336680, #00336680), url("/assets/images/hero-tablet.webp");
@@ -756,11 +738,12 @@ dt, dd {
   .step-right {
     width: 80%;
   }
-
-
 }
 
-/* Mobile settings */
+/* TABLET SETTINGS END */
+
+/* MOBILE SETTINGS START */
+
 @media (max-width: 576px) {
   .hero-image {
     background-image: linear-gradient(#00336680, #00336680), url("/assets/images/hero-mobile.webp");
@@ -870,3 +853,5 @@ dt, dd {
     margin: 1.2rem !important;
   }
 }
+
+/* MOBILE SETTINGS END */
