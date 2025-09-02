@@ -29,8 +29,8 @@ function minifyHTML() {
 // CSS minification
 function minifyCSS() {
   return src([
-      '_site/css/*.css',
-      '_site/css/bootstrap-5.3.7-dist/css/bootstrap.min.css'
+      '_site/css/*.css'
+      // '_site/css/bootstrap-5.3.7-dist/css/bootstrap.css'
     ], { allowEmpty: true })
     .pipe(cleanCSS({ level: 2 }))
     .pipe(dest(paths.dist + 'css'));
@@ -46,7 +46,7 @@ function minifyJS() {
 
 // Assets folder cpoying
 function copyAssets() {
-  return src(paths.assets, { base: '_site/assets' })
+  return src(paths.assets, { encoding: false })
     .pipe(dest(paths.dist + 'assets'));
 }
 
