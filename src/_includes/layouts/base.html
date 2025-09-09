@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  {% include "basehead.html" %}
+</head>
+<body>
+  <header>
+    {% include "baseheader.html" %}
+  </header>
+
+  <main>
+    {{content | safe}}
+  </main>
+
+  {% if page.url != "/contacts/" %}
+    <contact-us>
+      {% include "contact-us.html" %}
+    </contact-us>
+  {% endif %}
+
+  <footer>
+    {% include "basefooter.html" %}
+  </footer>
+</body>
+</html>

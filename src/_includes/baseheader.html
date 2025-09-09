@@ -1,0 +1,49 @@
+<div class="logo-bar">
+  <div class="brand">
+    <a href="/">
+      <img class="brand-logo" src="/assets/images/logo.png" alt="Main logo">
+      <span class="brand-name">Формула ППР</span>
+    </a>
+    <p class="brand-slogan">
+      Разработка проектов производства<br>работ (ППР), ТК и ППРк для строительства
+    </p>
+  </div>
+  <div class="contacts-container">
+    <div class="contact-item">
+      <img class="contacts-icon" src="/assets/images/icons/icon-phone-white.svg" alt="Телефон для связи">
+      <a href="tel:+79218572255">+7 (921) 857-22-55</a>
+    </div>
+    <div class="contact-item">
+      <img class="contacts-icon" src="/assets/images/icons/icon-email-white.svg" alt="Электронная почта для связи">
+      <a href="mailto:formulappr@yandex.ru">formulappr@yandex.ru</a>
+    </div>
+  </div>
+</div>
+<nav aria-label="Main navigation">
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <img class="hamburger-icon" src="/assets/images/icons/icon-burger.svg" alt="Open menu">
+    <img class="cross-icon" src="/assets/images/icons/icon-cross.svg" alt="Close menu">
+  </button>
+  <ul class="nav-list" role="list">
+    <li class="nav-item {% if page.url == '/what-is-ppr-and-tk/' %}active{% endif %}">
+      <a href="/what-is-ppr-and-tk/">Что такое ППР и ТК</a>
+    </li>
+    <li class="nav-item {% if page.url == '/algorithm/' %}active{% endif %}">
+      <a href="/algorithm/">Алгоритм разработки ППР</a>
+    </li>
+    <li class="nav-item {% if page.url == '/why-formula-ppr/' %}active{% endif %}">
+      <a href="/why-formula-ppr/">Почему мы</a>
+    </li>
+    <li class="nav-item {% if page.url == '/contacts/' %}active{% endif %}">
+      <a href="/contacts/">Контакты</a>
+    </li>
+    <li class="mobile-contacts">
+      <img class="contacts-icon" src="/assets/images/icons/icon-phone-white.svg" alt="Телефон для связи">
+      <a href="tel:+79218572255">+7 (921) 857-22-55</a>
+    </li>
+    <li class="mobile-contacts">
+      <img class="contacts-icon" src="/assets/images/icons/icon-email-white.svg" alt="Электронная почта для связи">
+      <a href="mailto:formulappr@yandex.ru">formulappr@yandex.ru</a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://formula-ppr.ru/sitemap.xml

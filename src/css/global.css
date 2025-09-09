@@ -1,0 +1,36 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(/assets/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+:root {
+  --white: #f9f9f9;
+  --black: #333333;
+  --blue: #003366;
+  --yellow: #ffbe0b;
+  --grey: #718f94;
+  --light-grey: #e2ebf5;
+}
+
+body {
+  font-family: Montserrat !important;
+  background-color: var(--white) !important;
+  color: var(--black) !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main strong {
+  font-weight: normal;
+  color: inherit;
+}
+
+.highlight {
+  font-weight: 600;
+}
