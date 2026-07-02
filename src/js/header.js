@@ -1,4 +1,3 @@
-// HEADER CODE
 // Menu folding/unfolding
 const hamburger = document.querySelector('.hamburger');
 const navList = document.querySelector('.nav-list');
@@ -12,12 +11,3 @@ if (hamburger && navList) {
     hamburger.setAttribute('aria-expanded', !expanded);
   });
 }
-// HEADER CODE END
-
-// FOOTER CODE
-// Automatic year actualization
-const yearSpan = document.getElementById('year');
-if (yearSpan) {
-  yearSpan.textContent = new Date().getFullYear();
-}
-// FOOTER CODE END

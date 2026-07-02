@@ -15,10 +15,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-// Scroll to "Contact Us" section without adding ID to the address line
-document.getElementById('cta-scroll-button').addEventListener('click', function() {
-  const target = document.getElementById('contact-us');
-  target.scrollIntoView({ behavior: 'smooth' });
-  history.pushState(null, '', window.location.pathname);
-});
